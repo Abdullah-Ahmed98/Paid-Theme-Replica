@@ -1,0 +1,29 @@
+# The theme - licensed separately, deliberately not committed.
+#
+# Template/ is the commercial "Barrel" WordPress theme (ThemeForest / Envato).
+# Its license does not permit redistributing the theme source, so it is excluded
+# from this public repository.
+#
+# CONSEQUENCE: a fresh clone of this repo will NOT render. index.html links 14
+# stylesheets and 20+ scripts that all live under Template/css, Template/js and
+# Template/fonts. You get the markup and the custom layer only.
+#
+# To run it locally you must supply your own licensed copy of the theme:
+#   1. Drop it in as ./Template/            (from your Envato download)
+#   2. Open index.html
+#
+# See README.md -> "Running it locally".
+
+Template/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.idea/
+.vscode/
+
+# Nothing else is ignored. screenshots/ is committed on purpose - it is the
+# visual half of the portfolio piece.

@@ -1,0 +1,984 @@
+/* ==========================================================================
+   CUSTOM STYLES - layered ON TOP of the untouched B-Agent theme in Template/.
+
+   Nothing here re-implements a theme component. The page is built from the
+   theme's own markup (mgt-header-block, mgt-process, mgt-promo-block,
+   mgt-icon-box, vc_progress_bar, mgt-portfolio-grid, wpcf7 form, Revolution
+   Slider for the hero). This file only:
+
+     00. Header behaviour (fixed bar over the hero)          - own JS
+     01. Design tokens
+     02. Scroll-reveal safety net
+     03. Brand: text logo + animated hamburger              - own JS
+     04. Hero layer styling
+     05. Layout repairs
+     06. Counters
+     07. Portfolio filter
+     08. Lightbox
+     09. Contact form validation states
+     10. Footer social icons (inline SVG, see js/custom.js)
+     11. Mobile fullscreen menu
+     12. Responsive
+     13. Reduced motion / print
+     14. Team photo frame (true 4:5, no crop, no letterbox)
+     15. Footer alignment (centre every column)
+
+   Layout note: the theme sets ".content-block > .container { padding: 0 }" while
+   Bootstrap keeps ".row { margin: 0 -15px }". Removing the gutter lets every row
+   stick 15px outside the viewport - harmless above 1200px, but at the fixed 750 /
+   970 containers it produces a 6px horizontal scrollbar. Section 05 clamps the
+   bleed in that band so the grid still lines up with the theme's own widths.
+   ========================================================================== */
+
+/* ---------- 00. Header behaviour ----------
+   template.js only wires its sticky/transparent logic for "header.sticky-header",
+   which this markup does not use, so the header is driven from custom.js: a
+   fixed bar that sits over the hero and gains a solid white background once the
+   page is scrolled.
+
+   Deliberate deviation: below 1280px the reference page lets the bar wrap to two
+   rows (199px tall). This build keeps one row and a fixed 92px height down to
+   375px, so tablets and phones do not lose ~110px of vertical space. Section 12
+   holds that height; section 05 uses the same 92px for the scroll offset. */
+header.main-header,
+header.main-header.transparent-header,
+header.main-header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5000;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    -webkit-transition: background .3s var(--fs-ease), box-shadow .3s var(--fs-ease);
+    transition: background .3s var(--fs-ease), box-shadow .3s var(--fs-ease);
+}
+
+header.main-header.fs-header-solid,
+header.main-header.fs-header-solid.transparent-header {
+    background: #ffffff;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, .12);
+}
+
+/* white navigation over the hero, ink once solid */
+header.main-header .navbar .nav > li > a,
+header.main-header .navbar .nav > li > a > span { color: #ffffff; }
+
+header.main-header.fs-header-solid .navbar .nav > li > a,
+header.main-header.fs-header-solid .navbar .nav > li > a > span { color: var(--fs-dark); }
+
+header.main-header .navbar .nav > li > a:hover,
+header.main-header .navbar .nav > li > a:focus,
+header.main-header.fs-header-solid .navbar .nav > li > a:hover,
+header.main-header.fs-header-solid .navbar .nav > li > a:focus { color: var(--fs-accent); }
+
+header.main-header .navbar .nav > li.current-menu-item > a,
+header.main-header.fs-header-solid .navbar .nav > li.current-menu-item > a { color: var(--fs-accent); }
+
+/* the theme gives the header a 650px min-width, which is far too wide for a
+   5-link one-page menu and is what pushed the reference into horizontal scroll */
+@media (min-width: 768px) {
+    header.main-header .header-center { min-width: 0; }
+
+    header.main-header .navbar .nav > li {
+        display: inline-block;
+        width: auto;
+    }
+
+    header.main-header .navbar .nav > li > a {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 26px;
+        margin-right: 26px;
+    }
+
+    header.main-header .navbar .nav > li:first-child > a { margin-left: 0; }
+}
+
+/* ---------- 01. Design tokens ---------- */
+:root {
+    --fs-accent: #ffbf3b;
+    --fs-accent-2: #f2a137;
+    --fs-line: #fad715;
+    --fs-dark: #2a2f35;
+    --fs-dark-2: #1c2126;
+    --fs-text: #2a2f35;
+    --fs-muted: #828282;
+    --fs-light-muted: #e1e1e1;
+    --fs-light: #f5f5f5;
+    --fs-ease: cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ---------- 02. Scroll-reveal safety net ----------
+   The theme's own reveal system is intact and drives the page:
+     .wpb_animate_when_almost_visible            { opacity: 0 }
+     .wpb_animate_when_almost_visible:not(.wpb_start_animation) { animation: none }
+     .wpb_start_animation                        { opacity: 1 }
+   and vc_waypoints() adds ".wpb_start_animation animated" at 85% scroll depth,
+   which starts the animate.css keyframes named by the wpb_fadeIn* classes.
+   js/custom.js adds .fs-no-waypoints to <body> if waypoints is unavailable so
+   that a JS failure can never leave the page blank. */
+body.fs-no-waypoints .wpb_animate_when_almost_visible { opacity: 1 !important; }
+
+/* ---------- 03. Brand: text logo + hamburger ---------- */
+.fs-logo {
+    display: inline-block;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1;
+    color: #ffffff;
+    text-transform: uppercase;
+    -webkit-transition: color .25s var(--fs-ease), letter-spacing .35s var(--fs-ease);
+    transition: color .25s var(--fs-ease), letter-spacing .35s var(--fs-ease);
+}
+
+header.main-header.fs-header-solid .fs-logo { color: var(--fs-dark); }
+
+.fs-logo:hover,
+.fs-logo:focus {
+    color: var(--fs-accent);
+    letter-spacing: 4.5px;
+    outline: none;
+}
+
+.fs-burger {
+    display: block;
+    width: 28px;
+    height: 20px;
+    position: relative;
+}
+
+.fs-burger i {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 28px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    -webkit-transition: transform .3s var(--fs-ease), opacity .2s var(--fs-ease), width .3s var(--fs-ease);
+    transition: transform .3s var(--fs-ease), opacity .2s var(--fs-ease), width .3s var(--fs-ease);
+}
+
+.fs-burger i:nth-child(1) { top: 0; }
+
+.fs-burger i:nth-child(2) {
+    top: 9px;
+    width: 20px;
+}
+
+.fs-burger i:nth-child(3) { top: 18px; }
+
+.fs-burger:hover i:nth-child(2) { width: 28px; }
+
+/* morph to X while the fullscreen menu is open */
+body.fs-menu-open .fs-burger i:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+body.fs-menu-open .fs-burger i:nth-child(2) { opacity: 0; transform: scaleX(0); }
+body.fs-menu-open .fs-burger i:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+body.fs-menu-open .fs-burger { color: #ffffff; }
+body.fs-menu-open .fs-logo { color: #ffffff; }
+
+.fs-menu-toggle,
+.fs-menu-close { color: inherit; }
+
+header.main-header .header-right ul.header-nav > li > div > a { color: #ffffff; }
+
+header.main-header.fs-header-solid .header-right ul.header-nav > li > div > a { color: var(--fs-dark); }
+
+/* ---------- 04. Hero layer styling ----------
+   Pre-paint defaults only, kept in step with each layer's level-1 data-fontsize /
+   data-lineheight in index.html. Revolution Slider writes the real inline
+   font-size / line-height / width per responsive level, so no !important here. */
+#home { position: relative; }
+
+.fs-hero-overlay { background-color: rgba(0, 0, 0, .65) !important; }
+
+.fs-hero-letter {
+    white-space: nowrap;
+    font-size: 600px;
+    line-height: 600px;
+    font-weight: 400;
+    color: var(--fs-line);
+    letter-spacing: 0;
+    font-family: "Catamaran", sans-serif;
+}
+
+/* Colour and font-family are also set inline on the layer (copied from the
+   reference) because the theme's ".page .entry-content h1 { color: #2A2F35 }"
+   outranks a single class - see index.html, slide-*-layer-1. */
+.fs-hero-title {
+    min-width: 0;
+    max-width: 900px;
+    white-space: normal;
+    font-size: 120px;
+    line-height: 100px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+.fs-hero-sub {
+    white-space: nowrap;
+    font-size: 32px;
+    line-height: 58px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 1);
+    font-family: "Catamaran", sans-serif;
+}
+
+.fs-hero-cta { font-size: 16px; }
+
+.fs-hero-cta .mgt-button,
+.fs-hero-cta .btn { margin: 0 6px; }
+
+.fs-hero-cta .mgt-style-bordered {
+    background: transparent;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+}
+
+.fs-hero-cta .mgt-style-bordered:before { background: #ffffff; }
+
+.fs-hero-cta .mgt-style-bordered:hover,
+.fs-hero-cta .mgt-style-bordered:focus { color: var(--fs-dark); }
+
+/* ---------- 05. Layout repairs ----------
+   (a) Smooth-scroll offset for the fixed header.
+   (b) Visual Composer rows bleed 15px out of the container
+       (margin: 0 -15px) while the theme strips the container gutter
+       (.content-block > .container { padding: 0 }). At the 750px container
+       that bleed reaches outside the viewport and produces a 6px horizontal
+       scrollbar, so the document is clipped. `clip` rather than `hidden`:
+       it does not create a scroll container, so the sticky header and the
+       lightbox keep working. */
+section[id] { scroll-margin-top: 92px; }
+
+/* #team is a row, not a section - it still needs to clear the sticky header
+   when the nav link jumps to it natively. */
+#team { scroll-margin-top: 92px; }
+
+html {
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+/* Between 768px and 1199px the container has a fixed width (750 / 970), so
+   the 15px row bleed lands outside the viewport. Below 768px the container is
+   100% wide and the bleed is absorbed, and above 1200px there is spare room,
+   so only this band needs the clamp. */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .content-block > .container > .row,
+    .entry-content > .vc_row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.fs-cta-row .mgt-header-line { background: var(--fs-accent) !important; }
+
+/* Hero height reservation (load-time layout jerk).
+   Revolution Slider owns the hero height. On load it (1) renders .rev_slider
+   with display:none, (2) measures, then (3) sets .rev_slider_wrapper to
+   position:absolute while it lays out. Steps 1 and 3 each drop the in-flow
+   height of .wpb_column-inner / .wpb_wrapper to 0, so before RS finished the
+   page was measured at 12349px and snapped to 13566px ~1.2s in, dragging every
+   section below the hero down with it. The theme hides this because its header
+   is position:absolute; ours is fixed, which leaves the hero as the first
+   in-flow element. Reserving one viewport up front means the space is never
+   given back. fullscreenbanner settles at exactly the viewport height, so the
+   reservation matches the final layout and adds nothing once RS is up. */
+#home {
+    min-height: 100vh;
+}
+
+/* slick-theme.css asks for Template/css/images/ajax-loader.gif, which the
+   export does not ship. The theme's own rule is replaced here (same
+   specificity, custom.css loads later) so the request is never made. */
+.slick-loading .slick-loading__body {
+    background-color: #fff;
+    background-image: none;
+}
+
+/* ---------- 06. Counters ---------- */
+.fs-counters-row {
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+}
+
+.fs-counter { text-align: center; }
+
+.fs-counter-value {
+    font-family: "Catamaran", sans-serif;
+    font-size: 60px;
+    line-height: 1;
+    font-weight: 500;
+    color: var(--fs-dark);
+}
+
+.fs-counter-suffix { color: var(--fs-accent); }
+
+.fs-counter-label {
+    margin-top: 12px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--fs-muted);
+}
+
+/* ---------- 07. Portfolio filter ---------- */
+.fs-filter { margin: 0 0 46px; }
+
+.fs-filter a {
+    margin: 0 5px 10px;
+    cursor: pointer;
+}
+
+.fs-filter a.active,
+.fs-filter a:focus {
+    background-color: var(--fs-accent) !important;
+    border-color: var(--fs-accent) !important;
+    color: #ffffff !important;
+}
+
+/* ---------- 08. Lightbox ---------- */
+.fs-lightbox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20000;
+    background: rgba(15, 18, 22, .96);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity .28s var(--fs-ease), visibility .28s var(--fs-ease);
+    transition: opacity .28s var(--fs-ease), visibility .28s var(--fs-ease);
+}
+
+.fs-lightbox.is-active { opacity: 1; visibility: visible; }
+
+.fs-lightbox-figure {
+    margin: 0;
+    max-width: 92vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#fs-lightbox-img {
+    max-width: 92vw;
+    max-height: 78vh;
+    width: auto;
+    height: auto;
+    display: block;
+    opacity: 0;
+    -webkit-transform: scale(.96);
+    transform: scale(.96);
+    box-shadow: 0 40px 120px -30px rgba(0, 0, 0, .8);
+    -webkit-transition: opacity .35s var(--fs-ease), transform .35s var(--fs-ease);
+    transition: opacity .35s var(--fs-ease), transform .35s var(--fs-ease);
+}
+
+#fs-lightbox-img.is-loaded { opacity: 1; -webkit-transform: scale(1); transform: scale(1); }
+
+#fs-lightbox-caption {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, .72);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.fs-lightbox button {
+    position: absolute;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    color: #ffffff;
+    opacity: .75;
+    font-size: 30px;
+    -webkit-transition: opacity .2s var(--fs-ease), transform .2s var(--fs-ease);
+    transition: opacity .2s var(--fs-ease), transform .2s var(--fs-ease);
+}
+
+.fs-lightbox button:hover { opacity: 1; }
+.fs-lightbox-close { top: 18px; right: 26px; font-size: 34px; line-height: 1; }
+.fs-lightbox-close:hover { transform: rotate(90deg); }
+
+.fs-lightbox-prev,
+.fs-lightbox-next {
+    top: 50%;
+    margin-top: -22px;
+    font-size: 44px;
+    line-height: 1;
+    opacity: .6;
+}
+
+.fs-lightbox-prev { left: 20px; }
+.fs-lightbox-next { right: 20px; }
+.fs-lightbox-prev:hover,
+.fs-lightbox-next:hover { opacity: 1; }
+
+body.fs-lightbox-open { overflow: hidden; }
+
+/* ---------- 09. Contact form ---------- */
+.fs-form { margin-top: 34px; }
+.fs-form .wpcf7-form-control {
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .16);
+    color: #ffffff;
+    height: 48px;
+}
+
+.fs-form textarea.wpcf7-form-control {
+    height: auto;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.fs-form .wpcf7-form-control::placeholder { color: rgba(255, 255, 255, .45); font-size: 14px; }
+.fs-form .wpcf7-form-control:focus { background: rgba(255, 255, 255, .1); border-color: var(--fs-accent); }
+.fs-form .wpcf7-form-control.fs-input-error { border-color: #ff6b6b !important; }
+
+.fs-form .wpcf7-submit {
+    background: var(--fs-accent);
+    color: var(--fs-dark);
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-transition: background .2s var(--fs-ease), transform .2s var(--fs-ease);
+    transition: background .2s var(--fs-ease), transform .2s var(--fs-ease);
+}
+
+.fs-form .wpcf7-submit:hover {
+    background: var(--fs-accent-2);
+    transform: translateY(-2px);
+}
+
+.fs-form .wpcf7-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+.fs-form-msg {
+    margin-top: 18px;
+    padding: 13px 18px;
+    border-radius: 2px;
+    font-size: 14px;
+    display: none;
+    text-align: center;
+}
+
+.fs-form-msg.is-visible {
+    display: block;
+    -webkit-animation: fsMsgIn .35s var(--fs-ease);
+    animation: fsMsgIn .35s var(--fs-ease);
+}
+
+.fs-form-msg.is-success { background: rgba(255, 191, 59, .14); border: 1px solid rgba(255, 191, 59, .5); color: var(--fs-accent); }
+.fs-form-msg.is-error { background: rgba(255, 107, 107, .14); border: 1px solid rgba(255, 107, 107, .5); color: #ff9b9b; }
+
+@keyframes fsMsgIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+}
+
+/* ---------- 10. Footer ----------
+   Social glyphs are inline SVG (see SOCIAL_SVG in js/custom.js) because the
+   theme's own brand icon webfont is not present in this export. */
+.footer-sidebar .widget a { -webkit-transition: color .2s var(--fs-ease); transition: color .2s var(--fs-ease); }
+.footer-sidebar .widget a:hover { color: var(--fs-accent); }
+.footer-copyright { font-size: 13px; }
+
+.social-icons-wrapper.fs-socials a { line-height: 0; }
+
+.social-icons-wrapper.fs-socials svg {
+    display: block;
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+    -webkit-transition: fill .2s var(--fs-ease), transform .25s var(--fs-ease);
+    transition: fill .2s var(--fs-ease), transform .25s var(--fs-ease);
+}
+
+.social-icons-wrapper.fs-socials a:hover svg { fill: var(--fs-accent); transform: translateY(-2px); }
+footer .social-icons-wrapper.fs-socials a { color: var(--fs-light-muted); }
+footer .social-icons-wrapper.fs-socials a:hover { color: var(--fs-accent); }
+
+/* ---------- 11. Mobile fullscreen menu ----------
+   The wrapper keeps the theme's own markup, positioning AND its black backdrop
+   (Template/css/style.css .header-advanced-menu-fullscreen-wrapper ->
+   background rgba(0,0,0,.9); color #fff). Only the open/closed state is driven
+   by body.fs-menu-open from custom.js, because template.js's own toggle handler
+   writes inline display/opacity that would fight the transition. The outer
+   -container is a transparent positioning host that carries the fade. */
+.header-advanced-menu-fullscreen-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 19998;
+    -webkit-transition: opacity .35s var(--fs-ease), visibility .35s var(--fs-ease);
+    transition: opacity .35s var(--fs-ease), visibility .35s var(--fs-ease);
+}
+
+body.fs-menu-open .header-advanced-menu-fullscreen-container { opacity: 1; visibility: visible; }
+body.fs-menu-open { overflow: hidden; }
+
+/* The theme already paints this wrapper background: rgba(0,0,0,.9) with
+   color #fff. Nothing to override - only the fade and the display toggle. */
+.header-advanced-menu-fullscreen-wrapper {
+    display: none;
+    opacity: 0;
+    -webkit-transition: opacity .35s var(--fs-ease);
+    transition: opacity .35s var(--fs-ease);
+}
+
+body.fs-menu-open .header-advanced-menu-fullscreen-wrapper { display: block; opacity: 1; }
+
+.header-advanced-menu-fullscreen-wrapper ul.header-advanced-fullscreen-menu li {
+    opacity: 0;
+    -webkit-transform: translateY(24px);
+    transform: translateY(24px);
+}
+
+body.fs-menu-open .header-advanced-menu-fullscreen-wrapper ul.header-advanced-fullscreen-menu li {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+    -webkit-transition: opacity .5s var(--fs-ease), transform .5s var(--fs-ease);
+    transition: opacity .5s var(--fs-ease), transform .5s var(--fs-ease);
+}
+
+body.fs-menu-open .header-advanced-menu-fullscreen-wrapper ul.header-advanced-fullscreen-menu li:nth-child(1) { transition-delay: .06s; }
+
+body.fs-menu-open .header-advanced-menu-fullscreen-wrapper ul.header-advanced-fullscreen-menu li:nth-child(2) { transition-delay: .12s; }
+
+body.fs-menu-open .header-advanced-menu-fullscreen-wrapper ul.header-advanced-fullscreen-menu li:nth-child(3) { transition-delay: .18s; }
+
+body.fs-menu-open .header-advanced-menu-fullscreen-wrapper ul.header-advanced-fullscreen-menu li:nth-child(4) { transition-delay: .24s; }
+
+body.fs-menu-open .header-advanced-menu-fullscreen-wrapper ul.header-advanced-fullscreen-menu li:nth-child(5) { transition-delay: .3s; }
+
+.header-advanced-menu-fullscreen-wrapper ul.header-advanced-fullscreen-menu li a {
+    position: relative;
+    display: inline-block;
+    font-family: "Catamaran", sans-serif;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 1.9;
+    letter-spacing: 1px;
+}
+
+.header-advanced-menu-fullscreen-wrapper ul.header-advanced-fullscreen-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 14px;
+    width: 0;
+    height: 3px;
+    background: var(--fs-accent);
+    -webkit-transition: width .35s var(--fs-ease);
+    transition: width .35s var(--fs-ease);
+}
+
+.header-advanced-menu-fullscreen-wrapper ul.header-advanced-fullscreen-menu li a:hover::after { width: 100%; }
+
+.fs-menu-close {
+    position: absolute;
+    top: 26px;
+    right: 30px;
+    z-index: 5;
+    cursor: pointer;
+    -webkit-transition: transform .35s var(--fs-ease);
+    transition: transform .35s var(--fs-ease);
+}
+
+.fs-menu-close:hover,
+.fs-menu-close:focus { -webkit-transform: rotate(90deg); transform: rotate(90deg); }
+
+.fs-menu-close i { font-size: 46px; }
+
+/* ---------- 12. Responsive ----------
+   The theme stacks the header (centred logo above a centred nav) at <=1024px
+   and then hides the burger at <=767px. Both are re-overridden: a 5-link
+   one-page nav reads better as a single bar, and the requirement calls for a
+   working hamburger on phones. */
+@media (max-width: 1024px) {
+    header.main-header > .container > .row { margin: 0; }
+    header.main-header > .container { padding: 0; }
+    header.main-header .col-md-12 { display: table; width: 100%; height: 92px !important; }
+
+    header.main-header .header-left,
+    header.main-header .header-center,
+    header.main-header .header-right {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: left;
+        min-width: 0;
+        margin: 0 !important;
+    }
+
+    header.main-header .header-center { text-align: center; }
+    header.main-header .header-right { text-align: right; }
+    header.main-header .header-right ul.header-nav { float: right; margin: 0; }
+    header.main-header .navbar .nav > li > a { margin-left: 18px; margin-right: 18px; }
+}
+
+/* Revolution Slider scales every layer by min(1, viewportWidth / gridwidth[level],
+   viewportHeight / gridheight[level]). With the theme grid (1240 / 868) that
+   factor collapses to ~0.39 at 480px, which would render the tagline at ~12px,
+   so from 1199px down the size is pinned and RevSlider's inline values are
+   overridden. From 1200px up the slider's own scaling is left alone. */
+@media (max-width: 1199px) {
+    .fs-hero-sub {
+        font-size: 26px !important;
+        line-height: 38px !important;
+    }
+
+    .fs-hero-cta .mgt-button { font-size: 15px !important; }
+}
+
+@media (max-width: 991px) {
+    .fs-hero-sub {
+        font-size: 22px !important;
+        line-height: 32px !important;
+    }
+
+    /* RevSlider scales button padding with the layer (30px side padding lands at
+       ~19px at 768 and ~12px at 480). Pin it back to the theme's 16px 30px. */
+    .fs-hero-cta .mgt-button { padding: 16px 30px !important; }
+    .fs-counter-value { font-size: 52px; }
+}
+
+@media (max-width: 767px) {
+    .fs-hero-sub {
+        font-size: 19px !important;
+        line-height: 28px !important;
+    }
+
+    .fs-hero-cta .mgt-button { font-size: 14px !important; }
+
+    /* Only a fallback for native anchor jumps; js/custom.js measures the live
+       header height. */
+    section[id] { scroll-margin-top: 92px; }
+    header.main-header .header-center { display: none; }
+    header.main-header .header-right { display: table-cell !important; }
+    header.main-header ul.header-nav > li.header-advanced-menu-toggle { display: block !important; }
+
+    header.main-header .mobile-sidebar-trigger,
+    header.main-header .mobile-main-menu-toggle,
+    header.main-header .mobile-trigger-search { display: none !important; }
+
+    header.main-header .navbar .nav > li > a { margin-left: 0; margin-right: 0; }
+    .fs-logo { font-size: 21px; letter-spacing: 2px; }
+    .fs-logo:hover { letter-spacing: 3px; }
+
+    /* RevSlider scales the layer and its button padding together, which crushes
+       the 30px side padding down to ~12px at 480px. Width and padding are pinned
+       so the buttons keep the theme's proportions; min-width (not width:100%)
+       stops the shrink-to-fit layer collapsing back onto the text. */
+    .fs-hero-cta .mgt-button {
+        display: block;
+        width: auto;
+        min-width: 186px;
+        max-width: 240px;
+        margin: 0 auto 10px;
+    }
+
+    .mgt-header-block.wpb_content_element { margin-top: 20px; }
+    .fs-counters-row { margin-bottom: 10px !important; }
+    .fs-counter-value { font-size: 44px; }
+    /* 11px here was a size I set earlier; it is below a comfortable reading
+       size and this is the only place the label shrinks. */
+    .fs-counter-label { font-size: 12px; letter-spacing: 1.5px; }
+
+    .fs-filter { margin-bottom: 30px; }
+
+    /* 7px of block padding left the chips 34px tall, under the 44px touch
+       target; 12px brings them to 44px. */
+    .fs-filter a {
+        display: inline-block;
+        margin: 3px 2px;
+        padding: 12px 14px;
+        font-size: 12px;
+    }
+
+    .header-advanced-menu-fullscreen-wrapper ul.header-advanced-fullscreen-menu li a { font-size: 28px; line-height: 2.1; }
+    .fs-menu-close i { font-size: 36px; }
+    .fs-lightbox-prev { left: 4px; }
+    .fs-lightbox-next { right: 4px; }
+}
+
+@media (max-width: 480px) {
+    .fs-hero-sub {
+        font-size: 17px !important;
+        line-height: 25px !important;
+    }
+
+    /* Small theme buttons under 44px tap height: lift to 44px. */
+    .mgt-button { min-height: 44px; line-height: 44px; }
+
+    .fs-counter-value { font-size: 38px; }
+    .fs-lightbox-prev,
+    .fs-lightbox-next { display: none; }
+}
+
+/* ---------- 12b. Touch targets and text fit ----------
+   Each rule below fixes a defect measured in the browser, and was checked
+   against Template/index.html first so that only real problems - not inherited
+   theme styling - were touched.
+
+   a.fs-logo-link measured 165x14 at 1024 and 266x14 at 375: it wraps a single
+   line of 26px wordmark text at line-height:1, so the entire brand was a 14px
+   tap strip. Template's own logo link is 179x20, so it has the same problem -
+   there is no reason to copy it. The wordmark keeps its size; only the hit area
+   grows, via inline-flex so vertical padding actually counts toward height
+   (on an inline box it would not).
+
+   a.fs-menu-toggle measured 28x20, which is the burger graphic itself rather
+   than anything tappable. It becomes a 44x44 flex box with the 28x20 graphic
+   centred inside, so the hit area is correct and nothing moves visually.
+
+   .portfolio-item-block .info is position:absolute with width:100% and 40px
+   padding. Between 768 and 1199 the grid is four across, so a tile is only
+   ~205px wide and the content box is 125px - narrower than the single word
+   "Components" set at 20px, which spilled 6px out of the tile. Template spills
+   by the same 6px. Trimming the padding to 20px in that band gives a 165px
+   content box, which fits. Below 768 the tiles go full width and the theme's
+   40px padding is left alone. */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .portfolio-item-block .info { padding: 20px; }
+}
+
+@media (max-width: 767px) {
+    /* Footer link lists are inline text links in both pages, so their 19-20px
+       line boxes are the theme's own and are left alone. The one genuine
+       control target left is the social icons: 15px SVGs. They get a 44px hit
+       area centred on the existing graphic.
+       (The slick pagination dots that used to be fixed up here went away with
+       the office and logo sliders - the page has no carousel left.) */
+    /* The social icons live in .footer-sidebar-wrapper, which is a div rather
+       than a <footer> element, so these are addressed through the sidebar
+       class instead of a footer tag selector. */
+    .footer-sidebar-wrapper .social-icons-wrapper.fs-socials a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .fs-logo-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 6px;
+    }
+
+    /* The theme right-aligns the desktop menu (menu-right) at every width, on
+       the reference too - its nav sits 279px right of centre at 1440. That is
+       the theme's own intent for a logo-left / links-right bar, so it is left
+       alone. */
+
+    header.main-header .fs-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0;
+    }
+}
+
+/* ---------- 13. Reduced motion / print ----------
+   Reduced motion is honoured, but only for the DECORATIVE motion.
+
+   This block used to be the textbook blanket
+       *, *:before, *:after { transition-duration: .01ms !important }
+   and it silently broke every carousel on the page: slick drives .slick-track
+   and owl drives .owl-wrapper with a CSS transition, so .01ms collapsed the
+   office slider, the logo slider and the testimonial carousel into hard jumps -
+   the slide animation simply did not work for anyone whose OS reports
+   prefers-reduced-motion (Windows "Animation effects" off, macOS Reduce Motion,
+   and every headless/embedded browser, which is why it survived earlier
+   testing here). Those three carousels have since been removed from the page,
+   so nothing on it is carousel-driven any more and there is nothing to exempt.
+   If a slick/owl carousel is ever added back, its track must be exempted here
+   or it will jump instead of slide. */
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* 13a. Decorative one-shots: the theme's scroll reveals (wpb_fadeIn*),
+       the animate.css effects they trigger, and the reveal/parallax
+       decoration on cards and promo blocks. */
+    .wpb_animate_when_almost_visible,
+    .wpb_fadeIn,
+    .wpb_fadeInUp,
+    .wpb_fadeInDown,
+    .wpb_fadeInLeft,
+    .wpb_fadeInRight,
+    .wpb_fadeInLeftBig,
+    .fadeIn,
+    .fadeInUp,
+    .fadeInDown,
+    .fadeInLeft,
+    .fadeInRight,
+    .fadeInLeftBig,
+    .mgt-promo-block.animated,
+    .mgt-promo-block,
+    .mgt-header-block,
+    .mgt-process-wrapper,
+    .mgt-icon-box,
+    .mgt-portfolio-grid-item,
+    .hvr-icon-wobble-horizontal,
+    .hvr-wobble-horizontal {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        -webkit-transition-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+
+    .wpb_animate_when_almost_visible { opacity: 1 !important; }
+
+    /* 13b. Chrome/hover polish that is pure decoration: shorten rather than
+       remove, so state changes still read as feedback. */
+    .fs-burger i,
+    .fs-logo,
+    .mgt-button,
+    .fs-filter a,
+    .fs-lightbox,
+    .fs-lightbox img,
+    .fs-lightbox button,
+    .footer-sidebar .widget a,
+    .header-advanced-menu-fullscreen-wrapper ul.header-advanced-fullscreen-menu li a::after {
+        -webkit-transition-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+
+    html { scroll-behavior: auto !important; }
+
+    /* 13d. Stop the background-attachment parallax. */
+    [data-vc-parallax] { background-attachment: scroll !important; }
+}
+
+@media print {
+
+    header.main-header,
+    .fs-lightbox,
+    .header-advanced-menu-fullscreen-wrapper,
+    .header-advanced-menu-fullscreen-container { display: none !important; }
+}
+
+/* ---------- 14. Team section (About > Our Team) ----------
+   The two member cards reuse the theme's own .mgt-promo-block. Only the photo
+   box is overridden, and for one reason: the theme paints
+   .mgt-promo-block-top-image as a background with background-size:cover
+   (style.css:5547), which crops the portrait into a letterbox band. The card
+   holds a real <img> instead, and the box is given the photo's OWN 4:5 shape so
+   the picture fills it edge to edge - never cropped, never stretched, and with
+   no dead space at the sides.
+
+   The box used to carry a fixed 380px height, which meant its shape swung with
+   the card's width: 370x380 at 1440, but 720x380 at 768 - a 1.89 frame holding
+   a 0.8 portrait, leaving 208px of empty card on each side of the photo. The
+   height now follows the width, so the two edges always agree. */
+/* The selector repeats the theme's own shape (style.css:5547 is
+   ".mgt-promo-block-wrapper .mgt-promo-block-top-image", two classes) with one
+   class added, so it wins on specificity instead of needing !important. It has
+   to: the theme pins height:250px, and without an explicit "height:auto" here
+   that 250px survives and aspect-ratio then derives the WIDTH from it - which
+   is how the frame first came out 200x250 instead of filling the card. */
+.mgt-promo-block-wrapper .mgt-promo-block-top-image.fs-team-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: none;
+    background-image: none;
+    width: 100%;
+    height: auto;
+    /* the box IS the photo's aspect ratio */
+    aspect-ratio: 4 / 5;
+}
+
+.mgt-promo-block-wrapper .mgt-promo-block-top-image.fs-team-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* ratios match, so this fills the frame exactly while still guaranteeing
+       nothing is ever cropped, whatever the viewport does */
+    object-fit: contain;
+}
+
+/* Between 768 and 991 the card goes full width (VC's vc_col-sm-12), so a true
+   4:5 frame would be ~900px tall - taller than the viewport. Cap the frame's
+   width there and centre it, which keeps the photo at its own ratio and still
+   flush with its own box. */
+@media (min-width: 768px) and (max-width: 991px) {
+    .mgt-promo-block-wrapper .mgt-promo-block-top-image.fs-team-photo {
+        width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* The bio. Two things only:
+   - line-height, so two or three wrapped lines read as a paragraph;
+   - colour. The theme's black-text promo body copy is #828282 on the white
+     card, which is 3.8:1 - below WCAG AA for body text. #68686d is the same
+     grey family already used for body copy elsewhere on the page and reaches
+     5.5:1. The selector repeats the theme's own shape one class deeper so it
+     wins on specificity rather than needing !important.
+   Font-size is deliberately left alone: the theme pins this block's <p> to
+   14px below 768px with !important, and inherits the same 15px above it. */
+.mgt-promo-block.black-text .mgt-promo-block-content p.fs-team-bio {
+    color: #68686d;
+    line-height: 1.75;
+}
+
+.fs-team-bio {
+    margin-bottom: 18px;
+}
+
+/* ---------- 15. Footer alignment ----------
+   Every string in the footer - both widget titles, the about paragraph, the
+   phone/e-mail line, the navigation links, the copyright - rendered flush to
+   its column's left edge, so the whole block read as one ragged left margin
+   against a centred page. Centring the text fixes that.
+
+   One rule is enough for the widgets: .social-icons-wrapper ul li is
+   display:inline-block (style.css:1863), so centring the text on the widget
+   also centres the social row - no flex change needed.
+
+   The copyright needed its column widened from col-md-6 to col-md-12 first,
+   otherwise text-align:center would centre it inside the left half of the
+   container rather than inside the container. */
+.footer-sidebar .widget {
+    text-align: center;
+}
+
+/* The theme only centres this for footer-col-1 (style.css:2708). This footer is
+   col-2, so it is stated here. */
+footer.footer-style-light .footer-copyright {
+    text-align: center;
+}
+
+/* The two footer widgets both carry padding-right:30px (style.css:3075). With
+   centred text that trailing pad no longer serves as a gutter between them, so
+   drop it and let each column centre on its own midpoint. */
+.footer-sidebar.footer-sidebar-col-2 > ul > li {
+    padding-right: 0;
+}

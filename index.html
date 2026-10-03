@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- PLACEHOLDER: page title + meta description live in js/site-data.js -->
+    <title>Freelance Studio &#8211; Creative Digital Agency</title>
+    <meta name="description" content="A three-person creative digital studio focused on strategy, design and development." />
+
+    <!-- Social preview. og:url and og:image need the live domain, so they are
+         left blank on purpose - add them next to these at deploy time, or the
+         link will render with no image when shared on LinkedIn/WhatsApp. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Freelance Studio" />
+    <meta property="og:title" content="Freelance Studio &#8211; Creative Digital Agency" />
+    <meta property="og:description" content="A three-person creative digital studio focused on strategy, design and development." />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- ============ THEME STYLES (B-Agent, referenced in place - never edited) ============ -->
+    <link rel="stylesheet" href="Template/css/pe-icon-7-stroke.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/js/plugins/revslider/public/assets/css/settings.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/css/bootstrap.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/js/plugins/owl-carousel/owl.carousel.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/js/plugins/owl-carousel/owl.theme.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/css/responsive.css?ver=all" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/css/animations.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/css/mega-menu.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/css/mega-menu-responsive.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/css/offcanvasmenu.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/css/nanoscroller.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/css/hover.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/js/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/js/plugins/js_composer/assets/css/js_composer.min.css" type="text/css" media="all" />
+    <!-- css-skin.css carries the theme's typography + colour skin
+         (body { font-family: "Poppins" }, #2a2f35 ink, #ffbf3b accent).
+         Without it the whole page falls back to Arial. -->
+    <link rel="stylesheet" href="Template/css/css-skin.css" type="text/css" media="all" />
+
+    <!-- ============ LOCAL REPAIRS / ADDITIONS ============ -->
+    <!-- animate.css: the theme export ships a 116 byte stub, which kills every
+         wpb_fadeIn* scroll reveal. This is the real keyframes library. -->
+    <link rel="stylesheet" href="css/animate.css" type="text/css" media="all" />
+    <!-- fonts.css: repoints the broken @font-face rules at /fonts -->
+    <link rel="stylesheet" href="css/fonts.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/css/slick.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Template/css/slick-theme.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/custom.css" type="text/css" media="all" />
+
+    <link rel="icon" href="Template/upload/cropped-favicon-32x32.png" sizes="32x32" />
+
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:400%2C500%2C300" rel="stylesheet" property="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400%2C700%7CPoppins:300%2C300italic%2C400%2C400italic%2C600%2C600italic%7COpen+Sans:300" rel="stylesheet" property="stylesheet" type="text/css" media="all" />
+</head>
+
+<body class="home page-template-default page page-id-19 wpb-js-composer js-comp-ver-5.2 vc_responsive">
+
+    <!-- ============================== HEADER ============================== -->
+    <header class="main-header sticky-header-elements-headeronly mainmenu-position-menu_in_header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-left">
+                        <a class="logo-link fs-logo-link" href="#home">
+                            <span class="fs-logo" data-ph="agency.shortName">FREELANCE</span>
+                        </a>
+                        <div class="mobile-sidebar-trigger">
+                            <a class="header-advanced-menu-toggle-btn"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <div class="mobile-main-menu-toggle" data-toggle="collapse" data-target=".collapse"><i class="fa fa-bars"></i></div>
+                    </div>
+
+                    <div class="header-center">
+                        <div id="navbar" class="navbar navbar-default clearfix mgt-mega-menu menu-right menu-uppercase menu-style-shadow">
+                            <div class="navbar-inner">
+                                <div class="navbar-collapse collapse">
+                                    <ul id="menu-main-menu" class="nav">
+                                        <li class="menu-item current-menu-item current_page_item"><a href="#home"><span>Home</span></a></li>
+                                        <li class="menu-item"><a href="#about"><span>About Us</span></a></li>
+                                        <li class="menu-item"><a href="#team"><span>Team</span></a></li>
+                                        <li class="menu-item"><a href="#portfolio"><span>Portfolio</span></a></li>
+                                        <li class="menu-item"><a href="#features"><span>Features</span></a></li>
+                                        <li class="menu-item"><a href="#contact"><span>Contact</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="header-right">
+                        <ul class="header-nav">
+                            <li class="header-advanced-menu-toggle">
+                                <div class="header-advanced-menu-toggle-inside">
+                                    <a class="header-advanced-menu-toggle-btn fs-menu-toggle" href="#" role="button" aria-label="Open menu" aria-expanded="false"><span class="fs-burger" aria-hidden="true"><i></i><i></i><i></i></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="content-block stick-to-footer">
+        <div class="page-container container">
+            <div class="row">
+                <div class="col-md-12 entry-content">
+                    <article>
+
+                        <!-- ================================================================
+                             1. HOME - REVOLUTION SLIDER
+                             Layer structure, transitions, data-frames, easing and the
+                             slider init below are the theme's own, unchanged.
+                             ================================================================ -->
+                        <section id="home">
+                            <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="wpb_revslider_element wpb_content_element">
+                                                <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-source="gallery" style="background: transparent; padding: 0px;">
+                                                    <div id="rev_slider_1_1" class="rev_slider fullscreenbanner" style="display: none;" data-version="5.4.5.1">
+                                                        <ul>
+                                                            <!-- SLIDE 1 -->
+                                                            <li data-index="rs-1" data-transition="curtain-2,fadefromtop" data-slotamount="default,default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default,default" data-easeout="default,default" data-masterspeed="default,default"
+                                                                data-rotate="0,0" data-saveperformance="off" data-title="Creative" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
+                                                                data-param10="" data-description="">
+                                                                <img src="Template/upload/workspace-table-wood.jpg" alt="" title="workspace-table-wood" width="1600" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina />
+
+                                                                <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme fs-hero-overlay" id="slide-1-layer-8" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="100%"
+                                                                    data-height="full" data-whitespace="nowrap" data-type="shape" data-basealign="slide" data-responsive_offset="on" data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                                                    data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; background-color: rgba(0, 0, 0, 0.65);"></div>
+
+                                                                <div class="tp-caption tp-resizeme rs-parallaxlevel-2 fs-hero-letter" id="slide-1-layer-10" data-x="['left','left','left','left']" data-hoffset="['100','100','100','100']" data-y="['top','top','top','top']" data-voffset="['100','100','100','100']" data-width="none"
+                                                                    data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1200,"speed":1400,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":1200,"frame":"999","to":"x:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                                                                    data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap; font-size: 600px; line-height: 600px; font-weight: 400; color: #fad715; letter-spacing: 0px; font-family: Catamaran;">
+                                                                    F
+                                                                </div>
+
+                                                                <h1 class="tp-caption tp-resizeme fs-hero-title" id="slide-1-layer-1" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-40','-40','-40','-77']" data-fontsize="['120','120','120','45']"
+                                                                    data-lineheight="['100','100','100','50']" data-width="['780','780','780','436']" data-height="none" data-whitespace="normal" data-type="text" data-responsive_offset="on" data-frames='[{"delay":10,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"Power2.easeIn"}]'
+                                                                    data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                                                                    data-ph="hero.slide1.title" style="z-index: 7; min-width: 780px; max-width: 780px; white-space: normal; font-size: 120px; line-height: 100px; font-weight: 500; color: rgba(255, 255, 255, 1); font-family: Catamaran;">
+                                                                    WE CREATE DIGITAL EXPERIENCES
+                                                                </h1>
+
+                                                                <div class="tp-caption tp-resizeme fs-hero-sub" id="slide-1-layer-3" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['182','182','182','42']"
+                                                                    data-lineheight="['60','60','60','35']" data-width="['none','none','none','410']" data-height="none" data-whitespace="['nowrap','nowrap','nowrap','normal']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":750,"speed":1750,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"Power2.easeIn"}]'
+                                                                    data-textAlign="['left','left','left','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                                                                    data-ph="hero.slide1.sub" style="z-index: 8; white-space: nowrap; font-size: 32px; line-height: 60px; font-weight: 300; color: rgba(255, 255, 255, 1);  font-family: Catamaran;">
+                                                                    Strategy, design and code — end to end.
+                                                                </div>
+
+                                                                <div class="tp-caption tp-resizeme fs-hero-cta" id="slide-1-layer-cta" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['380','380','380','185']"
+                                                                    data-width="['none','none','620','340']" data-height="none" data-whitespace="['nowrap','nowrap','normal','normal']" data-type="html" data-responsive_offset="on" data-frames='[{"delay":1200,"speed":1400,"frame":"0","from":"opacity:0;y:30px;","to":"o:1;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"Power2.easeIn"}]'
+                                                                    data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 9;">
+                                                                    <a href="#portfolio" class="btn hvr-grow mgt-button mgt-style-solid mgt-button-round-edges-full" data-ph="hero.slide1.ctaPrimary">Our work</a>
+                                                                    <a href="#contact" class="btn hvr-grow mgt-button mgt-style-bordered mgt-button-round-edges-full" data-ph="hero.slide1.ctaSecondary">Start a project</a>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- SLIDE 2 -->
+                                                            <li data-index="rs-6" data-transition="fadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
+                                                                data-rotate="0" data-saveperformance="off" data-title="Awesome" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
+                                                                data-description="">
+                                                                <img src="Template/upload/laptop-girl.jpg" alt="" title="laptop-girl" width="2000" height="1200" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina />
+
+                                                                <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme fs-hero-overlay" id="slide-6-layer-8" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="100%"
+                                                                    data-height="full" data-whitespace="nowrap" data-type="shape" data-basealign="slide" data-responsive_offset="on" data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                                                    data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; background-color: rgba(0, 0, 0, 0.65);"></div>
+
+                                                                <div class="tp-caption tp-resizeme rs-parallaxlevel-2 fs-hero-letter" id="slide-6-layer-10" data-x="['left','left','left','left']" data-hoffset="['100','100','100','100']" data-y="['top','top','top','top']" data-voffset="['100','100','100','100']" data-width="none"
+                                                                    data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1200,"speed":1400,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":1200,"frame":"999","to":"x:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                                                                    data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap; font-size: 600px; line-height: 600px; font-weight: 400; color: #fad715; letter-spacing: 0px; font-family: Catamaran;">
+                                                                    S
+                                                                </div>
+
+                                                                <h1 class="tp-caption tp-resizeme fs-hero-title" id="slide-6-layer-1" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-40','-40','-40','-77']" data-fontsize="['120','120','120','45']"
+                                                                    data-lineheight="['100','100','100','50']" data-width="['780','780','780','436']" data-height="none" data-whitespace="normal" data-type="text" data-responsive_offset="on" data-frames='[{"delay":10,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"Power2.easeIn"}]'
+                                                                    data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                                                                    data-ph="hero.slide2.title" style="z-index: 7; min-width: 780px; max-width: 780px; white-space: normal; font-size: 120px; line-height: 100px; font-weight: 500; color: rgba(255, 255, 255, 1); font-family: Catamaran;">
+                                                                    A SMALL TEAM WITH BIG IDEAS
+                                                                </h1>
+
+                                                                <div class="tp-caption tp-resizeme fs-hero-sub" id="slide-6-layer-3" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['182','182','182','42']"
+                                                                    data-lineheight="['60','60','60','35']" data-width="['none','none','none','410']" data-height="none" data-whitespace="['nowrap','nowrap','nowrap','normal']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":750,"speed":1750,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"Power2.easeIn"}]'
+                                                                    data-textAlign="['left','left','left','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                                                                    data-ph="hero.slide2.sub" style="z-index: 8; white-space: nowrap; font-size: 32px; line-height: 60px; font-weight: 300; color: rgba(255, 255, 255, 1);  font-family: Catamaran;">
+                                                                    We grab projects and finish them properly.
+                                                                </div>
+
+                                                                <div class="tp-caption tp-resizeme fs-hero-cta" id="slide-6-layer-cta" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['380','380','380','185']"
+                                                                    data-width="['none','none','620','340']" data-height="none" data-whitespace="['nowrap','nowrap','normal','normal']" data-type="html" data-responsive_offset="on" data-frames='[{"delay":1200,"speed":1400,"frame":"0","from":"opacity:0;y:30px;","to":"o:1;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"Power2.easeIn"}]'
+                                                                    data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 9;">
+                                                                    <a href="#portfolio" class="btn hvr-grow mgt-button mgt-style-solid mgt-button-round-edges-full" data-ph="hero.slide2.ctaPrimary">Our work</a>
+                                                                    <a href="#contact" class="btn hvr-grow mgt-button mgt-style-bordered mgt-button-round-edges-full" data-ph="hero.slide2.ctaSecondary">Start a project</a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="tp-bannertimer tp-bottom" style="height: 5px; background: rgba(255, 191, 59, 0.81);"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vc_row-full-width vc_clearfix"></div>
+
+                        </section>
+
+                        <!-- ================================================================
+                             3. ABOUT US  -  header block + mgt-process row
+                             ================================================================ -->
+                        <section id="about">
+                            <div class="vc_row wpb_row vc_row-fluid vc_custom_1495095159909 vc_row-o-equal-height vc_row-flex">
+                                <div class="wpb_column vc_column_container vc_col-sm-3">
+                                    <div class="vc_column-inner vc_custom_1487239752272">
+                                        <div class="wpb_wrapper"></div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-6">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-header-block clearfix text-center text-black wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown wpb_content_element mgt-header-block-style-2 mgt-header-block-fontsize-large mgt-header-texttransform-subheader mgt-header-block-16331092 vc_custom_1495121090752">
+                                                <p class="mgt-header-block-subtitle" data-ph="about.subtitle">Digital Products</p>
+                                                <h2 class="mgt-header-block-title text-font-weight-default" data-ph="about.title">What we do best</h2>
+                                                <div class="mgt-header-line mgt-header-line-margin-small"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-3">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 4 x mgt-process -->
+                            <div class="vc_row wpb_row vc_row-fluid wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp vc_custom_1496740383950">
+                                <div class="wpb_column vc_column_container vc_col-sm-3">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-process-wrapper mgt-process-77508961 mgt-process-icon-size-small mgt-process-border-circle mgt-process-dots-right wpb_content_element text-black text-center mgt-process-shadow">
+                                                <div class="mgt-process-icon-wrapper">
+                                                    <div class="mgt-process-icon"><i data-ph-class="process.0.icon"></i></div>
+                                                </div>
+                                                <h5 class="mgt-process-title text-font-weight-normal" data-ph="process.0.title">Prototyping</h5>
+                                                <div class="mgt-process-text" data-ph="process.0.text">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tempor doming</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-3">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-process-wrapper mgt-process-42325052 mgt-process-icon-size-small mgt-process-border-circle mgt-process-dots-both wpb_content_element text-black text-center mgt-process-shadow">
+                                                <div class="mgt-process-icon-wrapper">
+                                                    <div class="mgt-process-icon"><i data-ph-class="process.1.icon"></i></div>
+                                                </div>
+                                                <h5 class="mgt-process-title text-font-weight-normal" data-ph="process.1.title">Design</h5>
+                                                <div class="mgt-process-text" data-ph="process.1.text">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tempor doming</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-3">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-process-wrapper mgt-process-12602429 mgt-process-icon-size-small mgt-process-border-circle mgt-process-dots-both wpb_content_element text-black text-center mgt-process-shadow">
+                                                <div class="mgt-process-icon-wrapper">
+                                                    <div class="mgt-process-icon"><i data-ph-class="process.2.icon"></i></div>
+                                                </div>
+                                                <h5 class="mgt-process-title text-font-weight-normal" data-ph="process.2.title">Development</h5>
+                                                <div class="mgt-process-text" data-ph="process.2.text">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tempor doming</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-3">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-process-wrapper mgt-process-1018553 mgt-process-icon-size-small mgt-process-border-circle mgt-process-dots-left wpb_content_element text-black text-center mgt-process-shadow">
+                                                <div class="mgt-process-icon-wrapper">
+                                                    <div class="mgt-process-icon"><i data-ph-class="process.3.icon"></i></div>
+                                                </div>
+                                                <h5 class="mgt-process-title text-font-weight-normal" data-ph="process.3.title">Awesome project</h5>
+                                                <div class="mgt-process-text" data-ph="process.3.text">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tempor doming</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- split row: image + statement + button -->
+                            <div class="vc_row wpb_row vc_row-fluid vc_custom_1495120062458 vc_row-o-equal-height vc_row-flex">
+                                <div class="wpb_animate_when_almost_visible wpb_fadeInLeft fadeInLeft wpb_column vc_column_container vc_col-sm-4 vc_col-has-fill">
+                                    <div class="vc_column-inner vc_custom_1495195840236">
+                                        <div class="wpb_wrapper"></div>
+                                    </div>
+                                </div>
+                                <div class="wpb_animate_when_almost_visible wpb_fadeInRight fadeInRight wpb_column vc_column_container vc_col-sm-8 vc_col-has-fill">
+                                    <div class="vc_column-inner vc_custom_1495547184022">
+                                        <div class="wpb_wrapper">
+                                            <div class="wpb_text_column wpb_content_element vc_custom_1495219467704 text-size-medium">
+                                                <div class="wpb_wrapper">
+                                                    <h2><strong data-ph="about.splitTitle">Powerful Studio Options</strong></h2>
+                                                    <p data-ph="about.splitText">Talk less, do more and you will be rewarded. To make things that people care about. We were founded on this principle and we will always be committed to it.</p>
+                                                </div>
+                                            </div>
+                                            <div class="mgt-button-wrapper mgt-button-wrapper-align-center mgt-button-wrapper-display-inline mgt-button-top-margin-false mgt-button-right-margin-false mgt-button-round-edges-full">
+                                                <a class="btn hvr-grow mgt-button-icon- mgt-button mgt-style-solid mgt-size-normal mgt-align-center mgt-display-inline mgt-text-size-normal mgt-button-icon-separator- mgt-button-icon-position-left text-font-weight-default mgt-text-transform-none" href="#portfolio">
+                                                    <span data-ph="about.splitCta">Discover more</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 3 x animated counters -->
+                            <div class="vc_row wpb_row vc_row-fluid vc_custom_1495095159909 vc_row-o-equal-height vc_row-flex fs-counters-row" id="fs-stats">
+                                <div class="wpb_column vc_column_container vc_col-sm-4">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="fs-counter wpb_content_element wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp">
+                                                <div class="fs-counter-value"><span class="fs-count" data-fs-counter="50" data-ph-attr="data-fs-counter:stats.0.value">0</span><span class="fs-counter-suffix" data-ph="stats.0.suffix">+</span></div>
+                                                <div class="fs-counter-label" data-ph="stats.0.label">Projects delivered</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-4">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="fs-counter wpb_content_element wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp">
+                                                <div class="fs-counter-value"><span class="fs-count" data-fs-counter="20" data-ph-attr="data-fs-counter:stats.1.value">0</span><span class="fs-counter-suffix" data-ph="stats.1.suffix">+</span></div>
+                                                <div class="fs-counter-label" data-ph="stats.1.label">Happy clients</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-4">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="fs-counter wpb_content_element wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp">
+                                                <div class="fs-counter-value"><span class="fs-count" data-fs-counter="5" data-ph-attr="data-fs-counter:stats.2.value">0</span><span class="fs-counter-suffix" data-ph="stats.2.suffix">+</span></div>
+                                                <div class="fs-counter-label" data-ph="stats.2.label">Experience</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- "WHO WE ARE" statement - reference markup, vc_custom_1495110368336 -->
+                            <div class="vc_row wpb_row vc_row-fluid vc_custom_1495110368336 vc_row-o-equal-height vc_row-flex">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner vc_custom_1487239752272">
+                                        <div class="wpb_wrapper">
+                                            <h5 style="color: #68686d; text-align: left;" class="vc_custom_heading wpb_animate_when_almost_visible wpb_fadeInLeft fadeInLeft" data-ph="pillarsLabel">WHO WE ARE</h5>
+                                            <h2 style="font-size: 54px; text-align: left;" class="vc_custom_heading wpb_animate_when_almost_visible wpb_fadeInLeftBig fadeInLeftBig" data-ph-lines="pillarsHeading">Awesome international graphic|design and digital advertising|agency based in Australia</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vc_row wpb_row vc_row-fluid vc_custom_1495103021168">
+                                <div class="wpb_animate_when_almost_visible wpb_fadeInLeft fadeInLeft wpb_column vc_column_container vc_col-sm-4 vc_col-has-fill">
+                                    <div class="vc_column-inner vc_custom_1495195657294">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-icon-box wpb_content_element wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown mgt-icon-box-left mgt-icon-box-icon-size-large mgt-icon-box-23064517 mgt-icon-box-23064517 mgt-icon-font text-black">
+                                                <div class="mgt-icon-box-icon hvr-icon-wobble-horizontal"><i class="mgt-font-icon" data-ph-class="pillars.0.icon"></i></div>
+                                                <div class="mgt-icon-box-content">
+                                                    <h5 class="text-font-weight-bold" data-ph="pillars.0.title">Unlimited Colors</h5>
+                                                    <span data-ph="pillars.0.text">Barrel designs the experience in 3 steps, each increasing in detail, from the flow to the wireframes and from pen and paper</span>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="vc_progress_bar wpb_content_element vc_custom_1495112076346">
+                                                <div class="vc_general vc_single_bar">
+                                                    <small class="vc_label" style="color: #68686d;"><span class="vc_label_units" data-ph-pct="pillars.0.percent">95%</span></small>
+                                                    <span class="vc_bar" data-percentage-value="95" data-value="95" style="background-color: #fad715;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown wpb_column vc_column_container vc_col-sm-4 vc_col-has-fill">
+                                    <div class="vc_column-inner vc_custom_1495195651350">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-icon-box wpb_content_element wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown mgt-icon-box-left mgt-icon-box-icon-size-large mgt-icon-box-20254981 mgt-icon-box-20254981 mgt-icon-font text-black">
+                                                <div class="mgt-icon-box-icon hvr-icon-wobble-horizontal"><i class="mgt-font-icon" data-ph-class="pillars.1.icon"></i></div>
+                                                <div class="mgt-icon-box-content">
+                                                    <h5 class="text-font-weight-bold" data-ph="pillars.1.title">High Quality Design</h5>
+                                                    <span data-ph="pillars.1.text">Barrel designs the experience in 3 steps, each increasing in detail, from the flow to the wireframes and from pen and paper</span>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="vc_progress_bar wpb_content_element vc_custom_1495112068638">
+                                                <div class="vc_general vc_single_bar">
+                                                    <small class="vc_label" style="color: #68686d;"><span class="vc_label_units" data-ph-pct="pillars.1.percent">70%</span></small>
+                                                    <span class="vc_bar" data-percentage-value="70" data-value="70" style="background-color: #fad715;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_animate_when_almost_visible wpb_fadeInRight fadeInRight wpb_column vc_column_container vc_col-sm-4">
+                                    <div class="vc_column-inner vc_custom_1495195664890">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-icon-box wpb_content_element wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown mgt-icon-box-left mgt-icon-box-icon-size-large mgt-icon-box-71067543 mgt-icon-box-71067543 mgt-icon-font text-black">
+                                                <div class="mgt-icon-box-icon hvr-icon-wobble-horizontal"><i class="mgt-font-icon" data-ph-class="pillars.2.icon"></i></div>
+                                                <div class="mgt-icon-box-content">
+                                                    <h5 class="text-font-weight-bold" data-ph="pillars.2.title">Luxurious Layouts</h5>
+                                                    <span data-ph="pillars.2.text">Barrel designs the experience in 3 steps, each increasing in detail, from the flow to the wireframes and from pen and paper</span>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="vc_progress_bar wpb_content_element vc_custom_1495112021137">
+                                                <div class="vc_general vc_single_bar">
+                                                    <small class="vc_label" style="color: #68686d;"><span class="vc_label_units" data-ph-pct="pillars.2.percent">83%</span></small>
+                                                    <span class="vc_bar" data-percentage-value="83" data-value="83" style="background-color: #fad715;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- ============================== TEAM ============================== -->
+                            <div id="team" data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_row-o-equal-height vc_row-flex">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner vc_custom_1487239752272">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-header-block clearfix text-left text-black wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown wpb_content_element mgt-header-block-style-2 mgt-header-block-fontsize-medium mgt-header-texttransform-subheader mgt-header-block-89211400 vc_custom_1495118712451">
+                                                <p class="mgt-header-block-subtitle" data-ph="team.subtitle">best people</p>
+                                                <h2 class="mgt-header-block-title text-font-weight-default" data-ph="team.title">The two people behind the work</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vc_row-full-width vc_clearfix"></div>
+
+
+                            <!-- 2 x mgt-promo-block, photo at its own aspect ratio -->
+                        <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="Template/upload/back-woman-laptop.jpg" class="vc_row wpb_row vc_row-fluid vc_custom_1495115694412 vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
+                                <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-6 vc_col-lg-4 vc_col-lg-offset-2">
+                                        <div class="vc_column-inner">
+                                                <div class="wpb_wrapper">
+                                                        <div class="mgt-promo-block-container wpb_content_element wpb_animate_when_almost_visible wpb_fadeInLeft fadeInLeft">
+                                                                <div class="mgt-promo-block-wrapper mgt-promo-block-shadow mgt-promo-block-hover">
+                                                                        <div class="mgt-promo-block-top-image fs-team-photo">
+                                                                                <img src="abdullah_4x5.jpg" data-ph-attr="src:team.members.0.image" alt="Abdullah Ahmed" width="800" height="1000" decoding="async" />
+                                                                        </div>
+                                                                        <div class="mgt-promo-block black-text no-darken mgt-promo-block-78567608" data-style="background-color: #ffffff;height: auto;">
+                                                                                <div class="mgt-promo-block-content va-top">
+                                                                                        <div class="mgt-promo-block-content-inside vc_custom_1500049695290">
+                                                                                                <h2 style="text-align: center;" data-ph="team.members.0.name">Abdullah Ahmed</h2>
+                                                                                                <p style="text-align: center; color: #ffbf3b; font-weight: 600;" data-ph="team.members.0.role">Web Developer &amp; Automation</p>
+                                                                                                <p class="fs-team-bio" style="text-align: center;" data-ph="team.members.0.text">Web developer across front-end, backend CMS and AI workflows. Builds the automations that take repetitive work off the team, so pages ship faster and stay easy to maintain.</p>
+                                                                                                <div class="mgt-button-wrapper mgt-button-wrapper-align-center mgt-button-wrapper-display-newline mgt-button-top-margin-true mgt-button-right-margin-false mgt-button-round-edges-full">
+                                                                                                        <a class="btn hvr-wobble-horizontal mgt-button-icon- mgt-button mgt-style-solid mgt-size-normal mgt-align-center mgt-display-newline mgt-text-size-small mgt-button-icon-separator- mgt-button-icon-position-left text-font-weight-default mgt-text-transform-none" href="#contact">
+                                                                                                                <span data-ph="team.members.0.cta">Say hello</span>
+                                                                                                        </a>
+                                                                                                        <a class="btn hvr-sweep-to-right mgt-button-icon-true mgt-button mgt-style-borderedblack mgt-size-normal mgt-align-center mgt-display-newline mgt-text-size-small mgt-button-icon-separator-true mgt-button-icon-position-left text-font-weight-default mgt-text-transform-none" href="https://www.linkedin.com/in/abdullah-ahmed34/" data-ph-attr="href:team.members.0.linkedin" target="_blank" rel="noopener noreferrer">
+                                                                                                                <i class="fa fa-linkedin"></i><span data-ph="team.members.0.linkedinCta">LinkedIn</span>
+                                                                                                        </a>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-6 vc_col-lg-4">
+                                        <div class="vc_column-inner">
+                                                <div class="wpb_wrapper">
+                                                        <div class="mgt-promo-block-container wpb_content_element wpb_animate_when_almost_visible wpb_fadeInRight fadeInRight">
+                                                                <div class="mgt-promo-block-wrapper mgt-promo-block-shadow mgt-promo-block-hover">
+                                                                        <div class="mgt-promo-block-top-image fs-team-photo">
+                                                                                <img src="hassan_4x5.jpg" data-ph-attr="src:team.members.1.image" alt="Mubashir Hassan" width="800" height="1000" decoding="async" />
+                                                                        </div>
+                                                                        <div class="mgt-promo-block black-text no-darken mgt-promo-block-86827943" data-style="background-color: #ffffff;height: auto;">
+                                                                                <div class="mgt-promo-block-content va-top">
+                                                                                        <div class="mgt-promo-block-content-inside vc_custom_1500049715723">
+                                                                                                <h2 style="text-align: center;" data-ph="team.members.1.name">Mubashir Hassan</h2>
+                                                                                                <p style="text-align: center; color: #ffbf3b; font-weight: 600;" data-ph="team.members.1.role">Web Designer</p>
+                                                                                                <p class="fs-team-bio" style="text-align: center;" data-ph="team.members.1.text">Designs interfaces that look sharp and read clearly on any screen. Turns rough ideas into clean, accessible layouts, then hands over builds that are simple to maintain.</p>
+                                                                                                <div class="mgt-button-wrapper mgt-button-wrapper-align-center mgt-button-wrapper-display-newline mgt-button-top-margin-true mgt-button-right-margin-false mgt-button-round-edges-full">
+                                                                                                        <a class="btn hvr-wobble-horizontal mgt-button-icon- mgt-button mgt-style-solid mgt-size-normal mgt-align-center mgt-display-newline mgt-text-size-small mgt-button-icon-separator- mgt-button-icon-position-left text-font-weight-default mgt-text-transform-none" href="#contact">
+                                                                                                                <span data-ph="team.members.1.cta">Say hello</span>
+                                                                                                        </a>
+                                                                                                        <a class="btn hvr-sweep-to-right mgt-button-icon-true mgt-button mgt-style-borderedblack mgt-size-normal mgt-align-center mgt-display-newline mgt-text-size-small mgt-button-icon-separator-true mgt-button-icon-position-left text-font-weight-default mgt-text-transform-none" href="https://www.linkedin.com/in/mubashir-hassan-lead-generation-expert/" data-ph-attr="href:team.members.1.linkedin" target="_blank" rel="noopener noreferrer">
+                                                                                                                <i class="fa fa-linkedin"></i><span data-ph="team.members.1.linkedinCta">LinkedIn</span>
+                                                                                                        </a>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+
+                            <div class="vc_row-full-width vc_clearfix"></div>
+
+                        </section>
+
+                        <!-- ================================================================
+                             4. PORTFOLIO  -  header block + mgt-portfolio-grid
+                             ================================================================ -->
+                        <section id="portfolio">
+                            <div class="vc_row wpb_row vc_row-fluid vc_custom_1495100735646 vc_row-o-equal-height vc_row-flex">
+                                <div class="wpb_column vc_column_container vc_col-sm-3">
+                                    <div class="vc_column-inner vc_custom_1487239752272">
+                                        <div class="wpb_wrapper"></div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-6">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-header-block clearfix text-center text-black wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown wpb_content_element mgt-header-block-style-2 mgt-header-block-fontsize-large mgt-header-texttransform-subheader mgt-header-block-8845007 vc_custom_1495040145190">
+                                                <p class="mgt-header-block-subtitle" data-ph="portfolio.subtitle">portfolio</p>
+                                                <h2 class="mgt-header-block-title text-font-weight-default" data-ph="portfolio.title">Awesome Portfolio</h2>
+                                                <div class="mgt-header-line mgt-header-line-margin-small"></div>
+                                            </div>
+                                            <div class="wpb_text_column wpb_content_element wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown text-size-large">
+                                                <div class="wpb_wrapper">
+                                                    <p style="text-align: center;" data-ph="portfolio.text">We create themes, eCommerce projects, creative content that bring culture and commerce together.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-3">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- MixItUp filter -->
+                            <div class="vc_row wpb_row vc_row-fluid">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="fs-filter mgt-button-wrapper mgt-button-wrapper-align-center mgt-button-top-margin-true mgt-button-right-margin-false mgt-button-round-edges-full" id="fs-portfolio-filter">
+                                                <a href="#portfolio" class="btn hvr-sweep-to-right mgt-button mgt-style-bordered mgt-size-small mgt-align-center mgt-display-inline mgt-text-size-small active" data-filter="all">All</a>
+                                                <a href="#portfolio" class="btn hvr-sweep-to-right mgt-button mgt-style-bordered mgt-size-small mgt-align-center mgt-display-inline mgt-text-size-small" data-filter=".branding">Branding</a>
+                                                <a href="#portfolio" class="btn hvr-sweep-to-right mgt-button mgt-style-bordered mgt-size-small mgt-align-center mgt-display-inline mgt-text-size-small" data-filter=".web-design">Web Design</a>
+                                                <a href="#portfolio" class="btn hvr-sweep-to-right mgt-button mgt-style-bordered mgt-size-small mgt-align-center mgt-display-inline mgt-text-size-small" data-filter=".ui-ux">UI-UX</a>
+                                                <a href="#portfolio" class="btn hvr-sweep-to-right mgt-button mgt-style-bordered mgt-size-small mgt-align-center mgt-display-inline mgt-text-size-small" data-filter=".app-design">App Design</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp vc_custom_1496735800279 vc_row-no-padding">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-portfolio-grid wpb_content_element">
+                                                <div class="portfolio-list portfolio-columns-5 portfolio-grid-layout-0 clearfix" id="portfolio-list-29972074">
+
+                                                    <div class="portfolio-item-block text-center portfolio-item-animation-0 mix agency branding web-design" data-item="1" data-name="Designers Tool Kit">
+                                                        <div class="portfolio-item-block-inside">
+                                                            <a href="#portfolio" data-fs-lightbox="0">
+                                                                <div class="portfolio-item-image" data-style="background-image: url(imgs/pexels-cadomaestro-1170412_result.webp);"></div>
+                                                                <div class="portfolio-item-bg"></div>
+                                                                <div class="info">
+                                                                    <span class="sub-title" data-ph="portfolio.items.0.sub">Agency / Branding</span>
+                                                                    <h4 class="title" data-ph="portfolio.items.0.title">Designers Tool Kit</h4>
+                                                                    <div class="project-description" data-ph="portfolio.items.0.desc">Special mockup</div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="portfolio-item-block text-center portfolio-item-animation-0 mix agency web-design ui-ux" data-item="2" data-name="Stamp">
+                                                        <div class="portfolio-item-block-inside">
+                                                            <a href="#portfolio" data-fs-lightbox="1">
+                                                                <div class="portfolio-item-image" data-style="background-image: url(imgs/pexels-diva-plavalaguna-6937932_result.webp);"></div>
+                                                                <div class="portfolio-item-bg"></div>
+                                                                <div class="info">
+                                                                    <span class="sub-title" data-ph="portfolio.items.1.sub">Agency / Web design / UI&amp;UX</span>
+                                                                    <h4 class="title" data-ph="portfolio.items.1.title">Stamp</h4>
+                                                                    <div class="project-description" data-ph="portfolio.items.1.desc">Landing page</div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="portfolio-item-block text-center portfolio-item-animation-0 mix agency ui-ux" data-item="3" data-name="Ease UI Components">
+                                                        <div class="portfolio-item-block-inside">
+                                                            <a href="#portfolio" data-fs-lightbox="2">
+                                                                <div class="portfolio-item-image" data-style="background-image: url(imgs/pexels-divinetechygirl-1181311_result.webp);"></div>
+                                                                <div class="portfolio-item-bg"></div>
+                                                                <div class="info">
+                                                                    <span class="sub-title" data-ph="portfolio.items.2.sub">Agency</span>
+                                                                    <h4 class="title" data-ph="portfolio.items.2.title">Ease UI Components</h4>
+                                                                    <div class="project-description" data-ph="portfolio.items.2.desc">Mock up components</div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="portfolio-item-block text-center portfolio-item-animation-0 mix branding app-design ui-ux" data-item="1" data-name="Hero - Mobile Mockup">
+                                                        <div class="portfolio-item-block-inside">
+                                                            <a href="#portfolio" data-fs-lightbox="3">
+                                                                <div class="portfolio-item-image" data-style="background-image: url(imgs/pexels-feyzayildirimphoto-19876064_result.webp);"></div>
+                                                                <div class="portfolio-item-bg"></div>
+                                                                <div class="info">
+                                                                    <span class="sub-title" data-ph="portfolio.items.3.sub">Branding / App design / UI&amp;UX</span>
+                                                                    <h4 class="title" data-ph="portfolio.items.3.title">Hero - Mobile Mockup</h4>
+                                                                    <div class="project-description" data-ph="portfolio.items.3.desc">Perfect for mobile</div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="portfolio-item-block text-center portfolio-item-animation-0 mix ui-ux" data-item="2" data-name="Jumper Font">
+                                                        <div class="portfolio-item-block-inside">
+                                                            <a href="#portfolio" data-fs-lightbox="4">
+                                                                <div class="portfolio-item-image" data-style="background-image: url(imgs/pexels-ketut-subiyanto-4126739_result.webp);"></div>
+                                                                <div class="portfolio-item-bg"></div>
+                                                                <div class="info">
+                                                                    <span class="sub-title" data-ph="portfolio.items.4.sub">UI&amp;UX</span>
+                                                                    <h4 class="title" data-ph="portfolio.items.4.title">Jumper Font</h4>
+                                                                    <div class="project-description" data-ph="portfolio.items.4.desc">Exclusive font</div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="portfolio-item-block text-center portfolio-item-animation-0 mix app-design web-design ui-ux" data-item="3" data-name="Bag MockUp">
+                                                        <div class="portfolio-item-block-inside">
+                                                            <a href="#portfolio" data-fs-lightbox="5">
+                                                                <div class="portfolio-item-image" data-style="background-image: url(imgs/pexels-padrinan-2882652_result.webp);"></div>
+                                                                <div class="portfolio-item-bg"></div>
+                                                                <div class="info">
+                                                                    <span class="sub-title" data-ph="portfolio.items.5.sub">App design / Web design / UI&amp;UX</span>
+                                                                    <h4 class="title" data-ph="portfolio.items.5.title">Bag MockUp</h4>
+                                                                    <div class="project-description" data-ph="portfolio.items.5.desc">Packaging mockup</div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="portfolio-item-block text-center portfolio-item-animation-0 mix branding app-design" data-item="1" data-name="Colorfull app design">
+                                                        <div class="portfolio-item-block-inside">
+                                                            <a href="#portfolio" data-fs-lightbox="6">
+                                                                <div class="portfolio-item-image" data-style="background-image: url(imgs/pexels-picjumbo-com-55570-196645_result.webp);"></div>
+                                                                <div class="portfolio-item-bg"></div>
+                                                                <div class="info">
+                                                                    <span class="sub-title" data-ph="portfolio.items.6.sub">Branding / App design</span>
+                                                                    <h4 class="title" data-ph="portfolio.items.6.title">Colorfull app design</h4>
+                                                                    <div class="project-description" data-ph="portfolio.items.6.desc">Mobile app</div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="portfolio-item-block text-center portfolio-item-animation-0 mix agency app-design ui-ux" data-item="2" data-name="Bag design">
+                                                        <div class="portfolio-item-block-inside">
+                                                            <a href="#portfolio" data-fs-lightbox="7">
+                                                                <div class="portfolio-item-image" data-style="background-image: url(imgs/pexels-tranmautritam-285814_result.webp);"></div>
+                                                                <div class="portfolio-item-bg"></div>
+                                                                <div class="info">
+                                                                    <span class="sub-title" data-ph="portfolio.items.7.sub">Agency / App design / UI&amp;UX</span>
+                                                                    <h4 class="title" data-ph="portfolio.items.7.title">Bag design</h4>
+                                                                    <div class="project-description" data-ph="portfolio.items.7.desc">Merchandise</div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="portfolio-item-block text-center portfolio-item-animation-0 mix agency web-design" data-item="3" data-name="Mock up for devices">
+                                                        <div class="portfolio-item-block-inside">
+                                                            <a href="#portfolio" data-fs-lightbox="8">
+                                                                <div class="portfolio-item-image" data-style="background-image: url(imgs/pexels-tranmautritam-326514_result.webp);"></div>
+                                                                <div class="portfolio-item-bg"></div>
+                                                                <div class="info">
+                                                                    <span class="sub-title" data-ph="portfolio.items.8.sub">Agency / Web design</span>
+                                                                    <h4 class="title" data-ph="portfolio.items.8.title">Mock up for devices</h4>
+                                                                    <div class="project-description" data-ph="portfolio.items.8.desc">Responsive build</div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="portfolio-item-block text-center portfolio-item-animation-0 mix branding" data-item="1" data-name="Delightful font">
+                                                        <div class="portfolio-item-block-inside">
+                                                            <a href="#portfolio" data-fs-lightbox="9">
+                                                                <div class="portfolio-item-image" data-style="background-image: url(imgs/tookapic-office-932926_result.webp);"></div>
+                                                                <div class="portfolio-item-bg"></div>
+                                                                <div class="info">
+                                                                    <span class="sub-title" data-ph="portfolio.items.9.sub">Branding</span>
+                                                                    <h4 class="title" data-ph="portfolio.items.9.title">Delightful font</h4>
+                                                                    <div class="project-description" data-ph="portfolio.items.9.desc">Type system</div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vc_row-full-width vc_clearfix"></div>
+
+                        </section>
+
+                        <!-- ================================================================
+                             5. FEATURES  -  parallax + 3 big promo blocks + services
+                             ================================================================ -->
+                        <section id="features">
+
+                            <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="Template/upload/back-big-notes.jpg" class="vc_row wpb_row vc_row-fluid vc_custom_1495549691799 vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
+                                <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-promo-block-container wpb_content_element wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp">
+                                                <div class="mgt-promo-block-wrapper mgt-promo-block-shadow mgt-promo-block-hover">
+                                                    <div class="mgt-promo-block white-text cover-image darken mgt-promo-block-24538407" data-style="background-color: #ffffff;background-image: url(Template/upload/Team-1.jpg);background-repeat: no-repeat;height: 420px;">
+                                                        <div class="mgt-promo-block-content va-middle">
+                                                            <div class="mgt-promo-block-content-inside vc_custom_1500049658377">
+                                                                <h2 style="text-align: center;"><strong data-ph="features.blocks.0.title">Use it Anywhere</strong></h2>
+                                                                <p style="text-align: center;"><span style="color: #e1e1e1;" data-ph="features.blocks.0.text">Our goal is simple, to make things that people care about. We were founded on this principle and we will always be committed to it.</span></p>
+                                                                <div class="mgt-button-wrapper mgt-button-wrapper-align-center mgt-button-wrapper-display-newline mgt-button-top-margin-true mgt-button-right-margin-false mgt-button-round-edges-full">
+                                                                    <a class="btn hvr-grow mgt-button-icon-true mgt-button mgt-style-bordered mgt-size-normal mgt-align-center mgt-display-newline mgt-text-size-normal mgt-button-icon-separator-true mgt-button-icon-position-right text-font-weight-default mgt-text-transform-none" href="#contact">
+                                                                        <span data-ph="features.blocks.0.cta">Read more</span><i class="fa fa-angle-right"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-promo-block-container wpb_content_element wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown">
+                                                <div class="mgt-promo-block-wrapper mgt-promo-block-shadow mgt-promo-block-hover">
+                                                    <div class="mgt-promo-block white-text cover-image darken mgt-promo-block-39614140" data-style="background-color: #ffffff;background-image: url(Template/upload/girl-smoke.jpg);background-repeat: no-repeat;height: 420px;">
+                                                        <div class="mgt-promo-block-content va-middle">
+                                                            <div class="mgt-promo-block-content-inside vc_custom_1500049674955">
+                                                                <h2 style="text-align: center;"><strong data-ph="features.blocks.1.title">About Company</strong></h2>
+                                                                <p style="text-align: center;"><span style="color: #e1e1e1;" data-ph="features.blocks.1.text">We only hire great people who strive to push their ideas into fruition by outmuscling and outhustling the competition.</span></p>
+                                                                <div class="mgt-button-wrapper mgt-button-wrapper-align-center mgt-button-wrapper-display-newline mgt-button-top-margin-true mgt-button-right-margin-false mgt-button-round-edges-full">
+                                                                    <a class="btn hvr-grow mgt-button-icon-true mgt-button mgt-style-bordered mgt-size-normal mgt-align-center mgt-display-newline mgt-text-size-normal mgt-button-icon-separator-true mgt-button-icon-position-right text-font-weight-default mgt-text-transform-none" href="#contact">
+                                                                        <span data-ph="features.blocks.1.cta">Read more</span><i class="fa fa-angle-right"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-promo-block-container wpb_content_element wpb_animate_when_almost_visible wpb_fadeInRight fadeInRight">
+                                                <div class="mgt-promo-block-wrapper mgt-promo-block-shadow mgt-promo-block-hover">
+                                                    <div class="mgt-promo-block white-text cover-image darken mgt-promo-block-41181593" data-style="background-color: #ffffff;background-image: url(Template/upload/workplace-macbook.jpg);background-repeat: no-repeat;height: 420px;">
+                                                        <div class="mgt-promo-block-content va-middle">
+                                                            <div class="mgt-promo-block-content-inside vc_custom_1500049685763">
+                                                                <h2 style="text-align: center;"><strong data-ph="features.blocks.2.title">What we offer</strong></h2>
+                                                                <p style="text-align: center;"><span style="color: #e1e1e1;" data-ph="features.blocks.2.text">Talk less, do more and you will be rewarded. To make things that people care about. We were founded on this principle.</span></p>
+                                                                <div class="mgt-button-wrapper mgt-button-wrapper-align-center mgt-button-wrapper-display-newline mgt-button-top-margin-true mgt-button-right-margin-false mgt-button-round-edges-full">
+                                                                    <a class="btn hvr-grow mgt-button-icon-true mgt-button mgt-style-bordered mgt-size-normal mgt-align-center mgt-display-newline mgt-text-size-normal mgt-button-icon-separator-true mgt-button-icon-position-right text-font-weight-default mgt-text-transform-none" href="#contact">
+                                                                        <span data-ph="features.blocks.2.cta">Read more</span><i class="fa fa-angle-right"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vc_row-full-width vc_clearfix"></div>
+
+
+
+                        </section>
+
+                        <!-- ================================================================
+                             10. CONTACT  -  header block, 4 info columns, CTA form
+                             ================================================================ -->
+                        <section id="contact">
+                            <div class="vc_row wpb_row vc_row-fluid">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_pos_align_center vc_separator_no_text vc_sep_color_grey">
+                                                <span class="vc_sep_holder vc_sep_holder_l"><span class="vc_sep_line"></span></span><span class="vc_sep_holder vc_sep_holder_r"><span class="vc_sep_line"></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CTA + contact form -->
+                            <div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_custom_1495551401914 vc_row-has-fill vc_row-o-equal-height vc_row-flex fs-cta-row">
+                                <div class="wpb_column vc_column_container vc_col-sm-2">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper"></div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-8">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="mgt-header-block clearfix text-center text-white wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown wpb_content_element mgt-header-block-style-2 mgt-header-block-fontsize-medium mgt-header-texttransform-subheader mgt-header-block-2354379 vc_custom_1495531306455">
+                                                <p class="mgt-header-block-subtitle" data-ph="cta.subtitle">GET IN TOUCH</p>
+                                                <h2 class="mgt-header-block-title text-font-weight-default" data-ph="cta.title">Do you love us yet?</h2>
+                                                <div class="mgt-header-line mgt-header-line-margin-small"></div>
+                                            </div>
+                                            <div class="wpb_text_column wpb_content_element wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown text-size-large">
+                                                <div class="wpb_wrapper">
+                                                    <p style="text-align: center;"><span style="color: #e1e1e1;" data-ph="cta.text">We’re reaching new mile stones and we appreciate the continued support from everyone!</span></p>
+                                                </div>
+                                            </div>
+
+                                            <div role="form" class="wpcf7 fs-form" id="fs-contact-form-wrap" lang="en-US" dir="ltr">
+                                                <div class="screen-reader-response"></div>
+                                                <form action="#" method="post" class="wpcf7-form" novalidate="novalidate" id="fs-contact-form">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <p>
+                                                                <span class="wpcf7-form-control-wrap your-name">
+                                                                    <input type="text" name="your-name" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your Name *" data-fs-field="name" data-fs-label="Name" />
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <p>
+                                                                <span class="wpcf7-form-control-wrap your-email">
+                                                                    <input type="email" name="your-email" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Your Email *" data-fs-field="email" data-fs-label="Email" />
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <p>
+                                                                <span class="wpcf7-form-control-wrap Subject">
+                                                                    <input type="text" name="Subject" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Subject *" data-fs-field="subject" data-fs-label="Subject" />
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <p>
+                                                                <span class="wpcf7-form-control-wrap your-message">
+                                                                    <textarea name="your-message" cols="40" rows="8" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Message *" data-fs-field="message" data-fs-label="Message"></textarea>
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="mgt-button-wrapper mgt-button-round-edges-full text-center">
+                                                                <input type="submit" value="Send message" class="wpcf7-form-control wpcf7-submit mgt-button btn" data-ph-attr="value:cta.submit" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="wpcf7-response-output wpcf7-display-none fs-form-msg" id="fs-form-msg" role="status" aria-live="polite"></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-2">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vc_row-full-width vc_clearfix"></div>
+
+                        </section>
+
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================== FOOTER ============================== -->
+    <div class="container-fluid footer-wrapper">
+        <div class="row">
+            <div class="footer-sidebar-wrapper footer-sidebar-style-light" data-style="">
+                <div class="footer-sidebar sidebar container footer-sidebar-col-2">
+                    <ul id="footer-sidebar" class="clearfix">
+                        <li id="text-2" class="widget widget_text">
+                            <h2 class="widgettitle" data-ph="footer.aboutTitle">Freelance Studio</h2>
+                            <div class="textwidget">
+                                <p data-ph="footer.aboutText">Two people, one studio. We design and build websites, and we answer every message ourselves.</p>
+                                <p>
+                                    T: <span data-ph="footer.phone">+ 1 703 4959 3452</span><br /> E: <a href="mailto:hello@freelancestudio.com" data-ph-attr="href:footer.emailHref" data-ph="footer.email">hello@freelancestudio.com</a>
+                                </p>
+                                <div class="widget_barrel_social_icons shortcode_barrel_social_icons">
+                                    <div class="social-icons-wrapper">
+                                        <ul id="fs-footer-socials" class="social-icons-wrapper fs-socials"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="nav_menu-3" class="widget widget_nav_menu">
+                            <h2 class="widgettitle" data-ph="footer.menuTitle">Navigation</h2>
+                            <div class="menu-footermenu-1-container">
+                                <ul id="fs-footer-nav-1" class="menu"></ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <footer class="footer-style-light footer-col-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 footer-copyright">
+                            <span data-ph="footer.copyright">© 2026 Freelance Studio. All rights reserved.</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- ============================== MOBILE MENU ============================== -->
+    <div class="header-advanced-menu-fullscreen-container"></div>
+    <div class="header-advanced-menu-fullscreen-wrapper">
+        <div class="header-advanced-menu-close-btn fs-menu-close"><i class="pe-7s-close"></i></div>
+        <div class="header-advanced-menu-fullscreen-menu">
+            <div class="menu-offcanvas-container">
+                <ul id="menu-offcanvas" class="header-advanced-fullscreen-menu">
+                    <li class="menu-item"><a href="#home">Home</a></li>
+                    <li class="menu-item"><a href="#about">About Us</a></li>
+                    <li class="menu-item"><a href="#team">Team</a></li>
+                    <li class="menu-item"><a href="#portfolio">Portfolio</a></li>
+                    <li class="menu-item"><a href="#features">Features</a></li>
+                    <li class="menu-item"><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================== LIGHTBOX ============================== -->
+    <div id="fs-lightbox" class="fs-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project preview">
+        <button type="button" class="fs-lightbox-close" aria-label="Close"><i class="pe-7s-close"></i></button>
+        <button type="button" class="fs-lightbox-prev" aria-label="Previous project"><i class="fa fa-angle-left"></i></button>
+        <button type="button" class="fs-lightbox-next" aria-label="Next project"><i class="fa fa-angle-right"></i></button>
+        <figure class="fs-lightbox-figure">
+            <img id="fs-lightbox-img" src="" alt="" />
+            <figcaption id="fs-lightbox-caption"></figcaption>
+        </figure>
+    </div>
+
+    <!-- ============================== SCRIPTS ============================== -->
+    <script type="text/javascript" src="Template/js/jquery.js"></script>
+    <script type="text/javascript" src="Template/js/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="js/vendor-shims.js"></script>
+
+    <!-- Revolution Slider -->
+    <script type="text/javascript" src="Template/js/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/revslider/public/assets/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/revslider/public/assets/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/revslider/public/assets/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/revslider/public/assets/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/revslider/public/assets/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/revslider/public/assets/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/revslider/public/assets/js/extensions/revolution.extension.video.min.js"></script>
+
+    <!-- Theme + libraries -->
+    <script type="text/javascript" src="Template/js/plugins/easing.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/jquery.nanoscroller.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/jquery.mixitup.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/TweenMax.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/slick.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/js_composer/assets/js/dist/js_composer_front.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/js_composer/assets/lib/waypoints/waypoints.min.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/jquery.appear.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/jquery.countTo.js"></script>
+    <script type="text/javascript" src="Template/js/plugins/template.js"></script>
+
+    <!-- ================================================================
+         REVOLUTION SLIDER BOOTSTRAP
+         setREVStartSize() / revslider_showDoubleJqueryError() are the
+         theme's own helpers, lifted verbatim from the reference export, and
+         must exist before the init below runs.
+         ================================================================ -->
+    <script type="text/javascript">
+        function setREVStartSize(e) {
+            try {
+                var i = jQuery(window).width(),
+                    t = 9999,
+                    r = 0,
+                    n = 0,
+                    l = 0,
+                    f = 0,
+                    s = 0,
+                    h = 0;
+                if (
+                    (e.responsiveLevels &&
+                        (jQuery.each(e.responsiveLevels, function(e, f) {
+                                f > i && ((t = r = f), (l = e)), i > f && f > r && ((r = f), (n = e));
+                            }),
+                            t > r && (l = n)),
+                        (f = e.gridheight[l] || e.gridheight[0] || e.gridheight),
+                        (s = e.gridwidth[l] || e.gridwidth[0] || e.gridwidth),
+                        (h = i / s),
+                        (h = h > 1 ? 1 : h),
+                        (f = Math.round(h * f)),
+                        "fullscreen" == e.sliderLayout)
+                ) {
+                    var u = (e.c.width(), jQuery(window).height());
+                    if (void 0 != e.fullScreenOffsetContainer) {
+                        var c = e.fullScreenOffsetContainer.split(",");
+                        if (c)
+                            jQuery.each(c, function(e, i) {
+                                u = jQuery(i).length > 0 ? u - jQuery(i).outerHeight(!0) : u;
+                            }),
+                            e.fullScreenOffset.split("%").length > 1 && void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 ?
+                                (u -= (jQuery(window).height() * parseInt(e.fullScreenOffset, 0)) / 100) :
+                                void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 && (u -= parseInt(e.fullScreenOffset, 0));
+                    }
+                    f = u;
+                } else void 0 != e.minHeight && f < e.minHeight && (f = e.minHeight);
+                e.c.closest(".rev_slider_wrapper").css({
+                    height: f
+                });
+            } catch (d) {
+                console.log("Failure at Presize of Slider:" + d);
+            }
+        }
+
+        function revslider_showDoubleJqueryError(sliderID) {
+            var errorMessage = "Revolution Slider Error: You have some jquery.js library include that comes after the revolution files js include.";
+            errorMessage += "<br> This includes make eliminates the revolution slider libraries, and make it not work.";
+            errorMessage += "<br><br> To fix it you can:<br>&nbsp;&nbsp;&nbsp; 1. In the Slider Settings -> Troubleshooting set option:  <strong><b>Put JS Includes To Body</b></strong> option to true.";
+            errorMessage += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jquery.js include and remove it.";
+            errorMessage = "<span style='font-size:16px;color:#BC0C06;'>" + errorMessage + "</span>";
+            jQuery(sliderID).show().html(errorMessage);
+        }
+    </script>
+
+    <!-- ================================================================
+         REVOLUTION SLIDER INIT - theme homepage settings, unchanged
+         ================================================================ -->
+    <script type="text/javascript">
+        setREVStartSize({
+            c: jQuery("#rev_slider_1_1"),
+            responsiveLevels: [1240, 1240, 1240, 480],
+            gridwidth: [1240, 1240, 1240, 480],
+            gridheight: [868, 868, 868, 720],
+            sliderLayout: "fullscreen",
+            fullScreenAutoWidth: "off",
+            fullScreenAlignForce: "off",
+            fullScreenOffsetContainer: "",
+            fullScreenOffset: ""
+        });
+
+        var revapi1, tpj = jQuery;
+        tpj(document).ready(function () {
+            if (tpj("#rev_slider_1_1").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_1_1");
+            } else {
+                revapi1 = tpj("#rev_slider_1_1").show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "Template/js/plugins/revslider/public/assets/js/",
+                    sliderLayout: "fullscreen",
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    navigation: {
+                        keyboardNavigation: "off",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        mouseScrollReverse: "default",
+                        onHoverStop: "off",
+                        arrows: {
+                            style: "erinyen",
+                            enable: true,
+                            hide_onmobile: false,
+                            hide_onleave: false,
+                            left: { h_align: "left", v_align: "center", h_offset: 50, v_offset: 0 },
+                            right: { h_align: "right", v_align: "center", h_offset: 50, v_offset: 0 }
+                        }
+                    },
+                    responsiveLevels: [1240, 1240, 1240, 480],
+                    visibilityLevels: [1240, 1240, 1240, 480],
+                    gridwidth: [1240, 1240, 1240, 480],
+                    gridheight: [868, 868, 868, 720],
+                    lazyType: "none",
+                    parallax: {
+                        type: "mouse",
+                        origo: "enterpoint",
+                        speed: 400,
+                        speedbg: 0,
+                        speedls: 0,
+                        levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 55],
+                        disable_onmobile: "on"
+                    },
+                    shadow: 0,
+                    spinner: "spinner0",
+                    stopLoop: "off",
+                    stopAfterLoops: -1,
+                    stopAtSlide: -1,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    fullScreenAutoWidth: "off",
+                    fullScreenAlignForce: "off",
+                    fullScreenOffsetContainer: "",
+                    fullScreenOffset: "",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        nextSlideOnWindowFocus: "off",
+                        disableFocusListener: false
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Theme inline styles for the "erinyen" slider arrows (revicons font is not shipped) -->
+    <script>
+        (function () {
+            var css = '.erinyen.tparrows{cursor:pointer;background:rgba(0,0,0,0.5);min-width:70px;min-height:70px;position:absolute;display:block;z-index:100;border-radius:50%;}' +
+                '.erinyen.tparrows:before{font-size:20px;color:rgb(255,255,255);display:block;line-height:70px;text-align:center;z-index:2;position:relative;font-family:"FontAwesome";}' +
+                '.erinyen.tparrows.tp-leftarrow:before{content:"\\f104";}' +
+                '.erinyen.tparrows.tp-rightarrow:before{content:"\\f105";}' +
+                '.erinyen.tparrows:hover{background:rgba(255,191,59,0.9);}';
+            var s = document.createElement("style");
+            s.type = "text/css";
+            s.appendChild(document.createTextNode(css));
+            document.getElementsByTagName("head")[0].appendChild(s);
+        })();
+    </script>
+
+
+    <!-- Placeholder content (SINGLE SOURCE OF TRUTH) + one-page behaviour -->
+    <script type="text/javascript" src="js/site-data.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+
+</body>
+
+</html>

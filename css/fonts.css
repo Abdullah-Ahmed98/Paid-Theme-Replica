@@ -1,0 +1,32 @@
+/* =========================================================================
+   FONTS - local webfont repair
+   -------------------------------------------------------------------------
+   The theme export ships every @font-face rule but only 2 of the font files
+   (Template/fonts/Pe-icon-7-strokebb1d.woff and Template/fonts/slick.woff).
+   All the other icon fonts referenced by the theme CSS are missing, which is
+   why the demo renders tofu boxes for `fa`, `vc_li` and `entypo` icons.
+
+   This file re-declares the missing @font-face rules so they resolve to the
+   copies stored in /fonts. It MUST be loaded AFTER the theme CSS that
+   contains the broken rules, otherwise those win.
+
+   The glyph/class definitions (.fa, .fa-heart:before, ...) stay in the theme
+   stylesheet - we only replace the binary font files.
+   ========================================================================= */
+
+/* Font Awesome 4.x - used by the theme for socials, search, bars, plus, play */
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.woff2') format('woff2'), url('../fonts/fontawesome-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Pe Icon 7 Stroke - used by mgt-process icons, search close, header arrows.
+   Resolves inside the theme, declared here only to pin the format order. */
+@font-face {
+    font-family: 'Pe-icon-7-stroke';
+    src: url('../Template/fonts/Pe-icon-7-strokebb1d.woff?d7yf1v') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
