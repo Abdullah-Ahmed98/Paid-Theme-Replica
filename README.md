@@ -35,23 +35,9 @@ redistribution, not a portfolio piece.
 
 ## Screens
 
-| | |
-|---|---|
-| **Desktop, full page** | ![Desktop](screenshots/01-full-desktop.png) |
-| **Mobile, full page** | ![Mobile](screenshots/02-full-mobile.png) |
-
-<table>
-<tr>
-<td width="50%"><img src="screenshots/03-portfolio.png" alt="Portfolio grid with category filter"></td>
-<td width="50%"><img src="screenshots/04-team.png" alt="Team member cards"></td>
-</tr>
-<tr>
-<td><img src="screenshots/05-contact.png" alt="Contact section"></td>
-<td><img src="screenshots/06-team-mobile.png" alt="Team cards on mobile"></td>
-</tr>
-</table>
-
-Captured from the current build in headless Chrome.
+<!-- Add your own screenshots here, e.g.
+![Desktop](docs/screenshot-desktop.png)
+A `docs/` folder at the repo root works well. Keep them under ~1 MB each. -->
 
 ---
 
